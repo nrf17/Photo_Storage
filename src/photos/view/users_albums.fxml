@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!---Authors: Nick Fasullo (nrf17) -->
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="photos.controller.UsersAlbumsController">
+	<children>
+		<GridPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+			<columnConstraints>
+				<ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+			</columnConstraints>
+			<rowConstraints>
+				<RowConstraints maxHeight="194.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+				<RowConstraints maxHeight="388.0" minHeight="10.0" prefHeight="364.0" vgrow="SOMETIMES" />
+			</rowConstraints>
+			<children>
+				<ToolBar prefHeight="60.0" prefWidth="600.0">
+					<items>
+                  <Button fx:id="inbox" layoutX="239.0" layoutY="11.0" mnemonicParsing="false" onAction="#goToInbox" text="Inbox" />
+						<Button fx:id="createAlbum" mnemonicParsing="false" onAction="#createAlbum" text="Create" />
+						<Button fx:id="renameAlbum" layoutX="10.0" layoutY="11.0" mnemonicParsing="false" onAction="#renameAlbum" text="Rename" />
+						<Button fx:id="deleteAlbum" layoutX="66.0" layoutY="11.0" mnemonicParsing="false" onAction="#deleteAlbum" text="Delete" />
+						<Button fx:id="search" layoutX="122.0" layoutY="11.0" mnemonicParsing="false" onAction="#search" text="Search" />
+						<Button fx:id="logout" layoutX="183.0" layoutY="11.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+					</items>
+				</ToolBar>
+				<TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+					<columns>
+						<TableColumn fx:id="nameColumn" editable="false" prefWidth="213.0" resizable="true" text="Name" />
+						<TableColumn fx:id="numPhotosColumn" editable="false" prefWidth="213.0" resizable="true" text="Number of Photos" />
+						<TableColumn fx:id="dateColumn" editable="false" prefWidth="212.0" resizable="true" text="Date" />
+					</columns>
+				</TableView>
+			</children>
+		</GridPane>
+	</children>
+</AnchorPane>

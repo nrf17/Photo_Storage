@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!---Authors: Nick Fasullo (nrf17)-->
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.TilePane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141" fx:controller="photos.controller.InboxController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="640.0">
+         <children>
+            <GridPane prefHeight="400.0" prefWidth="640.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints maxHeight="198.0" minHeight="10.0" prefHeight="41.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="362.0" minHeight="10.0" prefHeight="359.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <ToolBar prefHeight="40.0" prefWidth="200.0">
+                     <items>
+                        <Button fx:id="back" mnemonicParsing="false" onAction="#goBack" text="Back" />
+                        <Button fx:id="delete" mnemonicParsing="false" onAction="#deletePic" text="Delete" />
+                        <Button fx:id="copy" mnemonicParsing="false" onAction="#copyTo" text="Copy" />
+                        <Button fx:id="move" mnemonicParsing="false" onAction="#movePic" text="Move" />
+                     </items>
+                  </ToolBar>
+                  <ScrollPane GridPane.rowIndex="1">
+                     <content>
+                        <TilePane fx:id="tileP" hgap="45.0" prefColumns="3" prefHeight="356.0" prefWidth="638.0" vgap="10.0">
+                           <padding>
+                              <Insets bottom="10.0" left="45.0" right="45.0" top="10.0" />
+                           </padding>
+                        </TilePane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
